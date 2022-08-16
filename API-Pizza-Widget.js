@@ -32,13 +32,17 @@ document.addEventListener('alpine:init', () => {
             },
 
             showCart() {
-                const url = 'https://pizza-cart-api.herokuapp.com/api/pizza-cart/${this.cartID}/get';
+                const url = `https://pizza-cart-api.herokuapp.com/api/pizza-cart/${this.cartID}/get`;
 
                 axios
                 .get(url)
                 .then((result) => {
                     this.cart = result.data;
                 });
+            },
+
+            pizzaImage(pizza) {
+                return `/images/${pizza.size}.png`
             },
 
             message : 'Eating Pizzas',

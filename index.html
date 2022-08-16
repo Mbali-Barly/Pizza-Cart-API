@@ -20,13 +20,7 @@
         }
     </style>
 
-    <!-- <script>
-   axios
-   .get(`https://pizza-cart-api.herokuapp.com/api/pizzas`)
-   .then((result) => {
-    console.log(result.data);
-   })
-    </script> -->
+
     
 </head>
 
@@ -75,6 +69,9 @@
     <table>
         <template x-for="pizza in pizzas">
         <tr>
+            <td>
+                <img x-bind:src="pizzaImage(pizza)" height = "30" alt="">
+            </td>
             <td x-text="pizza.flavour"></td>
             <td x-text="pizza.size"></td>
             <td x-text="pizza.price"></td>
