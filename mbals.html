@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- <script src="API-Pizza-Widget.js"></script> -->
+    <script src="mbals.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="//unpkg.com/alpinejs" defer></script>
+
+    <script>
+   
+
+    </script>
+    
+</head>
+
+
+<body>
+<div x-data="pizzaCartWithAPIWidget">
+
+<div x-text="message"></div>
+
+<h2>pizzas you can order</h2>
+
+
+        <template x-for="pizza in pizzas">
+        <table>
+        <tr>
+            <td x-text="pizza.flavour"></td>
+            <td x-text="pizza.size"></td>
+            <td x-text="pizza.price"></td>
+            <td>
+                <button>Buy</button>
+            </td>
+        </tr>
+        </table>
+        </template>
+    </table>
+</div>
+</body>
+</html>
