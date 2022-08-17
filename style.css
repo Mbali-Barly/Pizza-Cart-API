@@ -1,0 +1,44 @@
+body {
+    background-color: aquamarine;
+}
+.latestCart {
+    background-color: rgb(25, 151, 151);
+    border: 1px solid;
+    padding: 1em;
+    margin: 0.5em;
+    width: 18em;
+}
+.buyButton {
+    background-color: grey;
+    padding : 1em; 
+    border : 0.2em solid;
+    border-radius: 1em;
+    margin : 0.3em;
+    width: em;
+    height: 3em;
+}
+.buyButton:hover{background-color: whitesmoke;}
+
+.add{
+    background-color: green;
+}
+.add:hover{
+    background-color: greenyellow;
+}
+.minus{
+    background-color: rgb(129, 10, 10);
+}
+.minus:hover{background-color: red;}
+
+.checkoutButton {
+    background-color: #eae2b7;
+    padding : 0.4em;
+    border : 0.2em solid;
+    margin-top : 1em; 
+}
+.checkoutButton:hover {background-color: whitesmoke;}
+
+.PayNowww {
+    background-color: #feac07;
+}
+.PayNowww:hover{background-color: #fed907;}

@@ -50,6 +50,30 @@ document.addEventListener('alpine:init', () => {
             pizzas : [],
             cartID : '',
             cart : { total : 0},
+            checkOutButton : true,
+            payNow : false,
+
+            paymentAmount: 0,
+            returnFeedback: '',
+
+            makePayment () {
+                if(!this.paymentAmount) {
+                  this.returnFeedback = 'No amount entered'
+                }
+                else if ((this.cart.total) > this.paymentAmount) {
+                  this.returnFeedback = 'Payment unsuccessful'
+                }
+                else {this.returnFeedback = 'Payment Successful'
+          
+                setTimeout(()=> {
+                  this.payNow=false;
+                  this.clearCart()}, 5000)
+                }
+              },
+              clearCart() {
+                this.cart = 0.00;
+              },
+           
 
             add(pizza) {
                 const params = {
