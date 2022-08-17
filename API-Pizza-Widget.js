@@ -45,8 +45,8 @@ document.addEventListener('alpine:init', () => {
                 return `/images/${pizza.size}.png`
             },
 
-            message : 'Eating Pizzas',
-            username : 'Leigh',
+            message : 'Yummy Pizzas',
+            username : 'Mbali',
             pizzas : [],
             cartID : '',
             cart : { total : 0},
