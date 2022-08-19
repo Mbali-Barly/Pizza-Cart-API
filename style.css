@@ -4,11 +4,11 @@ body {
 .latestCart {
     background-color: rgb(25, 151, 151);
     border: 1px solid;
+    border-radius : 0.5em;
     padding: 1em;
     margin: 0.5em;
-    width: 33em;
+    width: 40em;
     text-align:center;
-
 }
 .buyButton {
     background-color: grey;
@@ -56,22 +56,33 @@ td{
 padding: 1em;
 }
 
-/* table{
-    border-collapse: collapse;
-    width: 70%;
-    }
-    /* td{
-    border: 2px solid black;
-    margin: 1em;
-    padding: 8px;
-    
-    } */
-
 .featuredPizza {
     background-color: rgb(177, 25, 106);
-    border : 1px solid;
-    border-radius : 1em;
-    padding : 1em;
+    border: 1px solid;
+    border-radius : 0.5em;
+    padding: 1em;
     margin: 0.5em;
-    width: 33em;
+    width: 40em;
+    text-align:center;
 }
+
+.paidPizza {
+    background-color: rgb(25, 151, 151);
+    border: 1px solid;
+    border-radius : 0.5em;
+    padding: 1em;
+    margin: 0.5em;
+    width: 40em;
+    text-align:center; 
+}
+
+.backButton {
+    background-color: rgb(238, 255, 0);
+    padding : 1em; 
+    border : 2px solid;
+    border-radius: 1em;
+    margin : 0.3em;
+    width: em;
+    height: 3em;
+}
+.backButton:hover{background-color: #f6c07d;}

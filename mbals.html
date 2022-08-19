@@ -40,6 +40,20 @@
         </table>
         </template>
     </table>
+
+    <template x-for="featured.pizzas">
+        <table>
+        <tr>
+            <td x-text="pizza.flavour"></td>
+            <td x-text="pizza.size"></td>
+            <td x-text="pizza.price"></td>
+            <td>
+                <button>Buy</button>
+            </td>
+        </tr>
+        </table>
+        </template>
+    </table>
 </div>
 </body>
 </html>

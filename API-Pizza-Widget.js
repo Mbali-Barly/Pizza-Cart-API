@@ -45,6 +45,10 @@ document.addEventListener('alpine:init', () => {
                 return `/images/${pizza.size}.png`
             },
 
+            featureImage(pizza) {
+                return `/featureImages/${pizza.size}.png`
+            },
+
             message : 'Yummy Pizzas',
             username : 'Mbali',
             pizzas : [],
@@ -52,6 +56,10 @@ document.addEventListener('alpine:init', () => {
             cart : { total : 0},
             checkOutButton : true,
             payNow : false,
+            featured_bar : [],
+            buyingButton : true,
+            latest_cart : true,
+            paid_pizza : false,
 
             paymentAmount: 0,
             returnFeedback: '',
@@ -72,6 +80,8 @@ document.addEventListener('alpine:init', () => {
               },
               clearCart() {
                 this.cart = 0.00;
+                this.featured_bar = 0.00;
+                this.paid_pizza = true;
               },
            
 
@@ -95,7 +105,32 @@ document.addEventListener('alpine:init', () => {
                 // alert(pizza.flavour + " : " + pizza.size + " : " + pizza.price)
                 // alert(pizza.id)
 
-            }
+            },
+
+            minus(pizza) {
+                const less = {
+                    cart_code: this.cartID,
+                    pizza_id: pizza.id
+                }
+
+                axios
+                .post('https://pizza-cart-api.herokuapp.com/api/pizza-cart/remove', less)
+                .then(() => {
+
+                    this.message = "Pizza removed from the cart" 
+                    this.showCart();
+
+                } )
+                .catch(err => alert(err) );
+
+                // alert(JSON.stringify(pizza))
+                // alert(pizza.flavour + " : " + pizza.size + " : " + pizza.price)
+                // alert(pizza.id)
+
+            },
+
+            
+            
             
                 
         }

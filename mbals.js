@@ -17,8 +17,19 @@ document.addEventListener('alpine:init', () => {
               },
 
             message : 'eating pizza',
+            pizzas : [],
+            featured : '',
 
-            pizzas : []
+            feature_bar () {
+                const url = `https://pizza-cart-api.herokuapp.com/api/featured`;
+
+                axios
+                .get(url)
+                .then((result) => {
+                    this.featured = result.data.featured
+                })
+                
+            }
         }
     })
 })

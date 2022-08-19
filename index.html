@@ -21,7 +21,7 @@
 
 
 
-
+    
 <h2>Pizzas you can order</h2> 
 
     <div>
@@ -31,17 +31,17 @@
     <div x-text="cartID"></div>
     <br>
 
-    <div x-text="message"></div>
+    <div x-text="message" x-show="cart"></div>
     
     <strong x-text="pizzas.length"></strong>
 
     <div>
 
-       <div>
+       <div x-show="cart">
         Cart total: <strong>R<price x-text="cart.total.toFixed(2)"></price></strong>
        </div> 
 
-       <div class="latestCart">
+       <div class="latestCart" x-show="cart">
             <table class="latestCarttable">
                 <tr>
                     <th>Flavour</th>
@@ -55,7 +55,7 @@
                     <td>
                         <span x-text="pizza.qty"></span>
                         <button class="add" x-on:click="add(pizza) +=1">+</button>
-                        <button class="minus">-</button>
+                        <button class="minus" x-on:click="minus(pizza) -=1">-</button>
                     </td>
                     <td>
                         R<price x-text="pizza.total.toFixed(2)"></price>
@@ -66,7 +66,7 @@
                 <tr>
                     <td colspan="2">
                     <div x-show="cart.total > 0">
-                     <button class="checkoutButton" x-show="!payNow" x-on:click="pizzas = false; payNow = true, checkoutButton = false">
+                     <button class="checkoutButton" x-show="!payNow" x-on:click="pizzas = false; buyingButton = false, featured_bar = false, payNow = true, checkoutButton = false">
                         <img src="https://icon-library.com/images/check-out-icon/check-out-icon-13.jpg" width="30" alt="">
                         Checkout
                     </button>   
@@ -97,13 +97,67 @@
             
         </div>
 
-        <div x-show="payNow">
-            <button x-on:click="pizzas = true">Back</button>
-        </div>
 
     </div>
 
-    <div class="featuredPizza" x-show="payNow">
+
+
+    <div class="featuredPizza" x-show="featured_bar">
+        <table>
+            <td class="Large_pizza">
+          <img src= "featureImages/largefeature.png" width="150">
+          <br><br>
+          <strong>Large pizza featured 1</strong>
+          <br><br>
+          <strong>R87.99</strong>
+          <button class="buyButton">Buy</button> 
+            </td>
+          
+            <td class="Medium_pizza">
+           <img src= "featureImages/mediumfeature.png" width="120">
+           <br><br>
+           <strong>Medium pizza featured 2</strong>
+           <br><br>
+           <strong>R58.99</strong> 
+          <button class="buyButton">Buy</button>  
+            </td>
+        
+            <td class="Small_pizza">
+            <img src= "featureImages/smallfeature.png" width="90">
+          <br>
+          <strong>Small pizza featured 3</strong>
+            <br><br>
+          <strong>R31.99</strong>
+          <button class="buyButton">Buy</button>
+            </td>
+        </table>
+    </div>
+
+
+
+    <!-- <div x-show="payNow">
+        <button class="backButton" x-on:click="featured_bar = true, pizzas = true, cart = false">Back</button>
+    </div> -->
+       
+    
+    <table>
+        <template x-for="pizza in pizzas">
+        <tr>
+            <td>
+                <img x-bind:src="pizzaImage(pizza)" height = "90" alt="">
+            </td>
+            <td x-text="pizza.flavour"></td>
+            <td x-text="pizza.size"></td>
+            <td x-text="pizza.price"></td>
+            <td>
+                <button class="buyButton" x-show="buyingButton" x-on:click="add(pizza)">Buy</button>
+            </td>
+        </tr>
+        </template>
+    </table>
+
+
+    <div class="paidPizza" x-show="paid_pizza">
         <h3>Your order is accepted, thank you!!!</h3> 
         <table>
             <template x-for="pizza in cart.pizzas">
@@ -117,31 +171,54 @@
                 <td x-text="pizza.total.toFixed(2)"></td>>
             </tr>
             </template>
-            <tr>
+            <!-- <tr>
                 Your Cart total: <strong>R<price x-text="cart.total.toFixed(2)"></price></strong>
-            </tr>
+            </tr> -->
         </table>
     </div>
-       
-    
-    <table>
-        <template x-for="pizza in pizzas">
-        <tr>
-            <td>
-                <img x-bind:src="pizzaImage(pizza)" height = "70" alt="">
-            </td>
-            <td x-text="pizza.flavour"></td>
-            <td x-text="pizza.size"></td>
-            <td x-text="pizza.price"></td>
-            <td>
-                <button class="buyButton" x-on:click="add(pizza)">Buy</button>
-            </td>
-        </tr>
-        </template>
-    </table>
+
+
 </div>
 </body>
 </html>
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+     <!-- <div class="featuredPizza">
+        <table>
+            <tr>
+                <img x-bind:src="featureImage(pizza)" height = "70" alt="">
+            <td class="Large_pizza">
+          <strong>Large pizza featured 1</strong>
+          <br><br>
+          <strong>R87.99</strong>
+          <button class="buyButton">Buy</button> 
+            </td>
+            <td class="Medium_pizza">
+           <strong>Medium pizza featured 2</strong>
+           <br><br>
+           <strong>R58.99</strong> 
+          <button class="buyButton">Buy</button>  
+            </td>
+            <td class="Small_pizza">
+            <strong>Small pizza featured 3</strong>
+            <br><br>
+          <strong>R31.99</strong>
+          <button class="buyButton">Buy</button>
+            </td>
+            </tr>
+        </table>
+    </div> -->
 
