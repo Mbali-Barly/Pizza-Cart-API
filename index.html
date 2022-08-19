@@ -54,8 +54,8 @@
                     <td x-text="pizza.flavour"></td>
                     <td>
                         <span x-text="pizza.qty"></span>
-                        <button class="add" x-on:click="add(pizza) +=1">+</button>
-                        <button class="minus" x-on:click="minus(pizza) -=1">-</button>
+                        <button class="add" x-on:click="add(pizza)">+</button>
+                        <button class="minus" x-on:click="minus(pizza)">-</button>
                     </td>
                     <td>
                         R<price x-text="pizza.total.toFixed(2)"></price>
