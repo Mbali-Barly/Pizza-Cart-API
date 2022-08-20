@@ -24,6 +24,8 @@ document.addEventListener('alpine:init', () => {
 
             },
 
+            
+
             createCart() {
                 // const cart_code = '...';
                 const url = `https://pizza-cart-api.herokuapp.com/api/pizza-cart/create?username=` + this.username;
@@ -73,15 +75,21 @@ document.addEventListener('alpine:init', () => {
                 }
                 else {this.returnFeedback = 'Payment Successful'
           
-                setTimeout(()=> {
+                setTimeout(() => {
                   this.payNow=false;
-                  this.clearCart()}, 5000)
+                  this.clearCart()
+                //   window.location.reload()
+                }, 5000)
                 }
               },
               clearCart() {
                 this.cart = 0.00;
                 this.featured_bar = 0.00;
                 this.paid_pizza = true;
+              },
+
+              backButtonFunction () {
+                return window.location.reload()
               },
            
 

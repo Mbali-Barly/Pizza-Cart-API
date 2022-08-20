@@ -40,7 +40,10 @@
        <div x-show="cart">
         Cart total: <strong>R<price x-text="cart.total.toFixed(2)"></price></strong>
        </div> 
+       
+       <br>
 
+       <div x-show="cart.total > 0">
        <div class="latestCart" x-show="cart">
             <table class="latestCarttable">
                 <tr>
@@ -97,10 +100,11 @@
             
         </div>
 
+        </div> 
 
     </div>
 
-
+    <br>
 
     <div class="featuredPizza" x-show="featured_bar">
         <table>
@@ -110,7 +114,7 @@
           <strong>Large pizza featured 1</strong>
           <br><br>
           <strong>R87.99</strong>
-          <button class="buyButton">Buy</button> 
+          <!-- <button class="buyButton" x-on:click="add(pizza)">Buy</button>  -->
             </td>
           
             <td class="Medium_pizza">
@@ -119,7 +123,7 @@
            <strong>Medium pizza featured 2</strong>
            <br><br>
            <strong>R58.99</strong> 
-          <button class="buyButton">Buy</button>  
+          <!-- <button class="buyButton">Buy</button>   -->
             </td>
         
             <td class="Small_pizza">
@@ -128,16 +132,16 @@
           <strong>Small pizza featured 3</strong>
             <br><br>
           <strong>R31.99</strong>
-          <button class="buyButton">Buy</button>
+          <!-- <button class="buyButton">Buy</button> -->
             </td>
         </table>
     </div>
 
 
 
-    <!-- <div x-show="payNow">
-        <button class="backButton" x-on:click="featured_bar = true, pizzas = true, cart = false">Back</button>
-    </div> -->
+    <div x-show="payNow">
+        <button class="backButton" x-on:click="backButtonFunction">Back/Cancel</button>
+    </div>
        
     
     <table>
