@@ -109,30 +109,30 @@
     <div class="featuredPizza" x-show="featured_bar">
         <table>
             <td class="Large_pizza">
-          <img src= "featureImages/largefeature.png" width="150">
+          <img src= "images/large.png" width="110" alt="">
           <br><br>
           <strong>Large pizza featured 1</strong>
           <br><br>
-          <strong>R87.99</strong>
-          <!-- <button class="buyButton" x-on:click="add(pizza)">Buy</button>  -->
+          R<strong x-text="featuredMediumPizza.price"></strong>
+          <button class="buyButton" x-on:click="add(featuredLargePizza)">Buy</button> 
             </td>
           
             <td class="Medium_pizza">
-           <img src= "featureImages/mediumfeature.png" width="120">
+           <img src= "images/medium.png" width="100" alt="">
            <br><br>
            <strong>Medium pizza featured 2</strong>
            <br><br>
-           <strong>R58.99</strong> 
-          <!-- <button class="buyButton">Buy</button>   -->
+           R<strong x-text="featuredMediumPizza.price"></strong> 
+           <button class="buyButton" x-show="buyingButton" x-on:click="add(featuredMediumPizza)">Buy</button>  
             </td>
         
             <td class="Small_pizza">
-            <img src= "featureImages/smallfeature.png" width="90">
-          <br>
+            <img src= "images/small.png" width="95" alt="">
+          <br><br>
           <strong>Small pizza featured 3</strong>
             <br><br>
-          <strong>R31.99</strong>
-          <!-- <button class="buyButton">Buy</button> -->
+          R<strong x-text="featuredSmallPizza.price"></strong>
+          <button class="buyButton" x-on:click="add(featuredSmallPizza)">Buy</button>
             </td>
         </table>
     </div>
@@ -144,11 +144,11 @@
     </div>
        
     
-    <table>
+    <table  class="pizzaAPI">
         <template x-for="pizza in pizzas">
         <tr>
             <td>
-                <img x-bind:src="pizzaImage(pizza)" height = "90" alt="">
+                <img x-bind:src="pizzaImage(pizza)" height = "75" alt="">
             </td>
             <td x-text="pizza.flavour"></td>
             <td x-text="pizza.size"></td>

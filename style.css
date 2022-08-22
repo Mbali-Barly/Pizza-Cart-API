@@ -1,6 +1,9 @@
 body {
     background-color: aquamarine;
 }
+.pizzaAPI{
+    padding: 2em;   
+}
 .latestCart {
     background-color: rgb(25, 151, 151);
     border: 1px solid;

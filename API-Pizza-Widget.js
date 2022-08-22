@@ -9,17 +9,18 @@ document.addEventListener('alpine:init', () => {
                 axios
                 .get(url)
                 .then((result) => {
-                    const pizzas = result.data.pizzas; 
-                    // this.pizzas is declared on you AlpineJS Widget.
-                    this.pizzas = pizzas;
+                    this.pizzas = result.data.pizzas;
+                    this.featuredLargePizza = this.pizzas['18'];
+                    this.featuredMediumPizza = this.pizzas['4'];
+                    this.featuredSmallPizza = this.pizzas['14'];
+                    // console.log(pizzas)
+
                 })
                 .then(() => {
                     return this.createCart();
                 })
                 .then((result) => {
-                    const cartID = result.data.cart_code; 
-                    // this.pizzas is declared on you AlpineJS Widget.
-                    this.cartID = cartID;
+                    this.cartID = result.data.cart_code; 
                 });
 
             },
@@ -59,6 +60,10 @@ document.addEventListener('alpine:init', () => {
             checkOutButton : true,
             payNow : false,
             featured_bar : [],
+            featuredLargePizza : [],
+            featuredMediumPizza : [],
+            featuredSmallPizza : [],
+            
             buyingButton : true,
             latest_cart : true,
             paid_pizza : false,
