@@ -83,14 +83,15 @@ document.addEventListener('alpine:init', () => {
                 setTimeout(() => {
                   this.payNow=false;
                   this.clearCart()
-                //   window.location.reload()
+                  window.location.reload()
                 }, 5000)
                 }
               },
               clearCart() {
                 this.cart = 0.00;
                 this.featured_bar = 0.00;
-                this.paid_pizza = true;
+                // this.paid_pizza = true;
+                alert('Your order is accepted, thank you!!!')
               },
 
               backButtonFunction () {
