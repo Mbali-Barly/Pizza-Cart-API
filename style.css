@@ -1,5 +1,9 @@
 body {
-    background-color: aquamarine;
+    background-image: repeating-linear-gradient(rgb(31, 134, 141), blue);
+}
+.heading{
+    background-image: url("featureImages/GIF.gif"); 
+    text-align: center;
 }
 .pizzaAPI{
     padding: 2em;   
@@ -9,9 +13,11 @@ body {
     border: 1px solid;
     border-radius : 0.5em;
     padding: 1em;
-    margin: 0.5em;
+    margin: 2em;
     width: 40em;
     text-align:center;
+    margin-left: auto;
+    margin-right: auto;
 }
 .buyButton {
     background-color: grey;
@@ -60,15 +66,34 @@ padding: 1em;
 }
 
 .featuredPizza {
-    background-color: rgb(177, 25, 106);
+    /* background-color: rgb(177, 25, 106); */
+    background-color: rgb(177, 154, 25);
     border: 1px solid;
     border-radius : 0.5em;
     padding: 1em;
     margin: 0.5em;
-    width: 40em;
-    text-align:center;
 }
-
+.Small_pizza{
+    border-radius : 1em;
+    margin : 1em;
+    padding : 1em;
+    width : 30em;
+    text-align: center;
+}
+.Medium_pizza{
+    border-radius : 1em;
+    margin : 1em;
+    padding : 1em;
+    width : 30em;
+    text-align: center;  
+}
+.Large_pizza{
+    border-radius : 1em;
+    margin : 1em;
+    padding : 1em;
+    width : 30em; 
+    text-align: center; 
+}
 .paidPizza {
     background-color: rgb(25, 151, 151);
     border: 1px solid;
@@ -81,7 +106,7 @@ padding: 1em;
 
 .backButton {
     background-color: rgb(238, 255, 0);
-    padding : 1em; 
+    padding : em; 
     border : 2px solid;
     border-radius: 1em;
     margin : 0.3em;

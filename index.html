@@ -21,9 +21,12 @@
 
 
 
-    
-<h2>Pizzas you can order</h2> 
-
+<div class="heading">
+    <br><br><br><br>
+    <h1>Pizzas you can quickly order!</h1>
+    <br><br><br><br>
+</div>  
+ <br>
     <div>
         Who is buying the pizza:
         <input type="text" x-model="username" >
@@ -40,8 +43,8 @@
        <div x-show="cart">
         Cart total: <strong>R<price x-text="cart.total.toFixed(2)"></price></strong>
        </div> 
+    
        
-       <br>
 
        <div x-show="cart.total > 0">
        <div class="latestCart" x-show="cart">
@@ -108,32 +111,63 @@
 
     <div class="featuredPizza" x-show="featured_bar">
         <table>
-            <td class="Large_pizza">
-          <img src= "images/large.png" width="110" alt="">
-          <br><br>
-          <strong>Large pizza featured 1</strong>
-          <br><br>
-          R<strong x-text="featuredMediumPizza.price"></strong>
-          <button class="buyButton" x-on:click="add(featuredLargePizza)">Buy</button> 
-            </td>
-          
-            <td class="Medium_pizza">
-           <img src= "images/medium.png" width="100" alt="">
-           <br><br>
-           <strong>Medium pizza featured 2</strong>
-           <br><br>
-           R<strong x-text="featuredMediumPizza.price"></strong> 
-           <button class="buyButton" x-show="buyingButton" x-on:click="add(featuredMediumPizza)">Buy</button>  
-            </td>
+            <tr>
+            <div>
+                <td class="Large_pizza">
+                    <div><img src= "images/large.png" width="120" alt=""></div>
+                    <div>
+                        <h3 x-text="featuredMediumPizza.flavour"></h3>
+                    </div>
+                    <div>
+                        <div x-text="featuredMediumPizza.size"></div>
+                    </div>
+                    <div>
+                        <h4>R<strong x-text="featuredMediumPizza.price"></strong></h4>
+                    </div>
+                    <div>
+                        <button class="buyButton" x-on:click="add(featuredLargePizza)">Buy</button>
+                    </div>
+                </td>
+            </div>
+
+            <div>
+                <td class="Medium_pizza">
+                    <div><img src= "images/medium.png" width="110" alt=""></div>
+                    <div>
+                        <h3 x-text="featuredMediumPizza.flavour"></h3>
+                    </div>
+                    <div>
+                        <div x-text="featuredMediumPizza.size"></div>
+                    </div>
+                    <div>
+                    <h4>R<strong x-text="featuredMediumPizza.price"></strong> </h4> 
+                    </div>
+                    <div>
+                        <button class="buyButton" x-on:click="add(featuredMediumPizza)">Buy</button>
+                    </div>
+                </td>
+            </div>
         
-            <td class="Small_pizza">
-            <img src= "images/small.png" width="95" alt="">
-          <br><br>
-          <strong>Small pizza featured 3</strong>
-            <br><br>
-          R<strong x-text="featuredSmallPizza.price"></strong>
-          <button class="buyButton" x-on:click="add(featuredSmallPizza)">Buy</button>
-            </td>
+            <div>
+                <td class="Small_pizza">
+                    <div>
+                        <img src= "images/small.png" width="105" alt="">
+                    </div>
+                    <div>
+                        <h3 x-text="featuredSmallPizza.flavour"></h3>
+                    </div>
+                    <div>
+                        <div x-text="featuredSmallPizza.size"></div>
+                    </div>
+                    <div>
+                       <h4>R<strong x-text="featuredSmallPizza.price"></strong></h4>
+                    </div>
+                    <div>
+                        <button class="buyButton" x-on:click="add(featuredSmallPizza)">Buy</button>
+                    </div>                    
+                </td>
+            </div>
+        </tr>
         </table>
     </div>
 
