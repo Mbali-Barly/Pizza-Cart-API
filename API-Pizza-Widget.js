@@ -70,6 +70,7 @@ document.addEventListener('alpine:init', () => {
 
             paymentAmount: 0,
             returnFeedback: '',
+            successfulText: 'Your order is accepted, thank you!!!',
 
             makePayment () {
                 if(!this.paymentAmount) {
@@ -84,14 +85,15 @@ document.addEventListener('alpine:init', () => {
                   this.payNow=false;
                   this.clearCart()
                   window.location.reload()
-                }, 5000)
+                }, 2000)
                 }
               },
               clearCart() {
                 this.cart = 0.00;
                 this.featured_bar = 0.00;
                 // this.paid_pizza = true;
-                alert('Your order is accepted, thank you!!!')
+                alert(this.username + " : " + this.successfulText)
+                // alert(pizza.flavour + " : " + pizza.size + " : " + pizza.price)
               },
 
               backButtonFunction () {
