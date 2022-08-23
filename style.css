@@ -4,13 +4,21 @@ body {
 }
 .heading{
     background-image: url("featureImages/GIF.gif"); 
-    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
 }
+h1 {background-color: #fed907;
+width : 13.5em;
+margin-left: auto;
+    margin-right: auto;}
+
 .wording{
     padding : 1em;
 }
 .pizzaAPI{
-    padding: 2em;   
+    padding: 2em;
+    margin-left: auto;
+    margin-right: auto;   
 }
 .latestCart {
     /* background-color: rgb(25, 151, 151); */
