@@ -6,6 +6,9 @@ body {
     background-image: url("featureImages/GIF.gif"); 
     text-align: center;
 }
+.wording{
+    padding : 1em;
+}
 .pizzaAPI{
     padding: 2em;   
 }

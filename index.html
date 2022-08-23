@@ -26,23 +26,24 @@
     <h1>Pizzas you can quickly order!</h1>
     <br><br><br><br>
 </div>  
- <br>
-    <div>
+    <br>
+    <span class="wording">
         Who is buying the pizza:
         <input type="text" x-model="username" >
-    </div>
-    <div x-text="cartID"></div>
+    </span>
     <br>
+    <span class="wording" x-text="cartID"></span>
+    <br><br><br>
 
-    <div x-text="message" x-show="cart"></div>
-    
-    <strong x-text="pizzas.length"></strong>
+    <span class="wording" x-text="message" x-show="cart"></span>
+    <br>
+    <strong class="wording" x-text="pizzas.length"></strong>
 
     <div>
 
-       <div x-show="cart">
+       <span class="wording" x-show="cart">
         Cart total: <strong>R<price x-text="cart.total.toFixed(2)"></price></strong>
-       </div> 
+       </span> 
     
        
 
