@@ -66,7 +66,7 @@ document.addEventListener('alpine:init', () => {
             
             buyingButton : true,
             latest_cart : true,
-            paid_pizza : false,
+            // paid_pizza : false,
 
             paymentAmount: 0,
             returnFeedback: '',
