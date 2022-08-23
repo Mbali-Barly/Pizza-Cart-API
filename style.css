@@ -1,5 +1,6 @@
 body {
-    background-image: repeating-linear-gradient(rgb(31, 134, 141), blue);
+    /* background-image: repeating-linear-gradient(rgb(31, 134, 141), blue); */
+    background-image: repeating-linear-gradient(rgb(31, 134, 141),aquamarine);
 }
 .heading{
     background-image: url("featureImages/GIF.gif"); 

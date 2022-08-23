@@ -10,10 +10,10 @@ document.addEventListener('alpine:init', () => {
                 .get(url)
                 .then((result) => {
                     this.pizzas = result.data.pizzas;
-                    this.featuredLargePizza = this.pizzas['18'];
-                    this.featuredMediumPizza = this.pizzas['4'];
-                    this.featuredSmallPizza = this.pizzas['14'];
-                    // console.log(pizzas)
+                    this.featuredLargePizza = this.pizzas['9'];
+                    this.featuredMediumPizza = this.pizzas['26'];
+                    this.featuredSmallPizza = this.pizzas['4'];
+                    console.log(this.pizzas)
 
                 })
                 .then(() => {
